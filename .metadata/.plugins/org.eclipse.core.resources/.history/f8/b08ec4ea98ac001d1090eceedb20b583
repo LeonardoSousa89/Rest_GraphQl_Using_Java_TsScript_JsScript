@@ -1,0 +1,3 @@
+spring.datasource.url=jdbc:h2:localhost/h2-console:frases
+spring.datasource.data-username=mendes
+spring.datasource.password=

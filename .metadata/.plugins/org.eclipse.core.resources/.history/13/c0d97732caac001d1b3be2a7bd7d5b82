@@ -1,0 +1,18 @@
+package com.rest.feignClient;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rest.entities.FrasesDTO;
+
+@FeignClient(name = "apiMensagemSpring", url = "http://localhost:8082", path = "/frase")
+@RestController
+public interface FrasesFeignClient {
+
+	@GetMapping(value = "/{id}")
+	ResponseEntity<FrasesDTO> getFraseById(@PathVariable int id);
+	
+}

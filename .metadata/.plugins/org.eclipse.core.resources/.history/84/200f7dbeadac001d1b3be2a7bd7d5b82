@@ -1,0 +1,19 @@
+package com.mensagem.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mensagem.entities.Frases;
+import com.mensagem.repositories.FrasesRepository;
+
+@Service
+public class FrasesService {
+
+	@Autowired
+	FrasesRepository repository;
+	
+	public void addFrase(Frases frase) {
+		repository.save(frase);
+	}
+	
+}

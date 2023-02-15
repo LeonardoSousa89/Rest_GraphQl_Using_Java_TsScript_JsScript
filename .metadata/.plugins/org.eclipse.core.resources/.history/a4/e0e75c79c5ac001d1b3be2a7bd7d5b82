@@ -1,0 +1,5 @@
+package com.rest.entities;
+
+public class Frases {
+
+}

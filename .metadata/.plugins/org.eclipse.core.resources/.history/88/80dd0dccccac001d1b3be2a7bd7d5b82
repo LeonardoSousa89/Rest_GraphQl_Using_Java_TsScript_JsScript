@@ -1,0 +1,31 @@
+package com.rest.services;
+
+import java.sql.Timestamp;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.entities.FrasesDTO;
+import com.rest.entities.LogDeAcesso;
+import com.rest.feignClient.FrasesFeignClient;
+import com.rest.repositories.LogDeAcessoRepository;
+
+@Service
+public class LogDeAcessoServices {
+
+	@Autowired
+	FrasesFeignClient frasesFeignClient;
+	
+	@Autowired
+	LogDeAcessoRepository repository;
+	
+	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+	
+	public LogDeAcesso logs(int id) {
+		
+		FrasesDTO frase = frasesFeignClient.getFraseById(id).getBody();
+		return new LogDeAcesso(frase.getFrase_do_usuario(), timestamp);
+	}
+	
+}

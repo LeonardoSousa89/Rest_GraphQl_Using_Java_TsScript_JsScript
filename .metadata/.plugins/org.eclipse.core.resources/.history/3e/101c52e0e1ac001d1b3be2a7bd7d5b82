@@ -1,0 +1,37 @@
+package com.rest.entities;
+
+import java.io.Serializable;
+import java.time.Instant;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "registro")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+public class LogDeAcesso implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	private int id;
+	private String frase_do_usuario;
+	private Instant horario_de_acesso;
+	
+	public String frases(Frases frase) {
+		this.frase_do_usuario = frase.getFrase_do_usuario();
+		return this.frase_do_usuario;
+	}
+	
+}

@@ -1,0 +1,47 @@
+package com.rest.services;
+
+import java.sql.Timestamp;
+import java.time.Instant;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.entities.LogDeAcesso;
+import com.rest.entitiesDTO.FrasesDTO;
+import com.rest.entitiesDTO.LogDeAcessoDTO;
+import com.rest.feignClient.FrasesFeignClient;
+import com.rest.repositories.LogDeAcessoRepository;
+
+@Service
+public class LogDeAcessoServices {
+
+	@Autowired
+	FrasesFeignClient frasesFeignClient;
+	
+	@Autowired
+	LogDeAcessoRepository repository;
+	
+	Instant instant = Instant.now();
+	
+	public LogDeAcessoDTO logs(int id) {
+		
+		LogDeAcesso log = new LogDeAcesso();
+		log.setHorario_de_acesso(instant);
+		
+		FrasesDTO frase = frasesFeignClient.getFraseById(id).getBody();
+		
+		return new LogDeAcessoDTO(log, frase);
+	}
+	
+	
+	public void salvarRegistro(Integer id, String frase_do_usuario) {
+		
+		FrasesDTO frase = frasesFeignClient.getFraseById(id).getBody();
+		
+		LogDeAcesso acesso = new LogDeAcesso();
+		String novo_acacesso = acesso.frases(frase);
+		
+		LogDeAcesso registro = new LogDeAcesso(id, novo_acacesso, instant);
+		repository.save(registro);
+	}
+}

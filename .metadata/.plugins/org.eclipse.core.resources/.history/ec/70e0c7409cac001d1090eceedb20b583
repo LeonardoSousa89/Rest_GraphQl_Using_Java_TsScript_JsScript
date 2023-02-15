@@ -1,0 +1,9 @@
+package com.mensagem.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mensagem.entities.Frases;
+
+public interface FraseRepository extends JpaRepository<Frases, Integer>{
+
+}

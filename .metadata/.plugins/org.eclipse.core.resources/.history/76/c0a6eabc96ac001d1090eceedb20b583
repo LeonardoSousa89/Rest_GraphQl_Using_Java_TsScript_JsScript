@@ -1,0 +1,21 @@
+package com.mensagem.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import lombok.*;
+
+@Entity
+@Table(name = "frase")
+@NoArgsConstructor
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class Frases implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	
+	
+}

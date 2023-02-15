@@ -1,0 +1,10 @@
+package com.rest.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "registro")
+public class Frases {
+
+}

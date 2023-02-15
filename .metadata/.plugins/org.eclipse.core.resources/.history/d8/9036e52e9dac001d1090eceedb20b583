@@ -1,0 +1,7 @@
+package com.mensagem.DTO;
+
+public class FrasesDTO {
+
+	private String frase_do_usuario;
+	
+}

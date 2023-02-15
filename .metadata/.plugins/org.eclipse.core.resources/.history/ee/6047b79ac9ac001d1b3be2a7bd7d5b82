@@ -1,0 +1,26 @@
+package com.rest.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.entities.FrasesDTO;
+import com.rest.entities.LogDeAcesso;
+import com.rest.feignClient.FrasesFeignClient;
+import com.rest.repositories.LogDeAcessoRepository;
+
+@Service
+public class LogDeAcessoServices {
+
+	@Autowired
+	FrasesFeignClient frasesFeignClient;
+	
+	@Autowired
+	LogDeAcessoRepository repository;
+	
+	public LogDeAcesso logs(int id) {
+		
+		FrasesDTO frase = frasesFeignClient.getFraseById(id).getBody();
+		return new LogDeAcesso(id, frase_do_usuario, horario_de_acesso)
+	}
+	
+}

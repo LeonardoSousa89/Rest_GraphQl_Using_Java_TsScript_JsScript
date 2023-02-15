@@ -1,0 +1,5 @@
+package com.mensagem.services;
+
+public class FrasesService {
+
+}

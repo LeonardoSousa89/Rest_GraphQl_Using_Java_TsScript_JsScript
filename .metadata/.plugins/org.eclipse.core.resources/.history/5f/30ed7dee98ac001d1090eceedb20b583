@@ -1,0 +1,3 @@
+spring.datasource.url=jjdbc:h2:mem:frases
+spring.datasource.data-username=mendes
+spring.datasource.password=

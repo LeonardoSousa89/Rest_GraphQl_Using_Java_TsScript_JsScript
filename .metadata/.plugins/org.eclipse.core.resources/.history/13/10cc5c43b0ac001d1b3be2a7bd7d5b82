@@ -1,0 +1,26 @@
+package com.mensagem.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mensagem.entities.Frases;
+import com.mensagem.repositories.FrasesRepository;
+
+@Service
+public class FrasesService {
+
+	@Autowired
+	FrasesRepository repository;
+	
+	public void addFrase(Frases frase) {
+		repository.save(frase);
+	}
+	
+	public List<Frases> getFrases(){
+		List<Frases> frases = repository.findAll();
+		return frases;
+	}
+	
+}

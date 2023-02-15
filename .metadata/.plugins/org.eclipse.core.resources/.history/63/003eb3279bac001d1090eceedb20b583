@@ -1,0 +1,6 @@
+spring.application.name=apiMensagemSpring
+server.port=8082
+
+spring.profiles.active=test
+
+spring.dataso
