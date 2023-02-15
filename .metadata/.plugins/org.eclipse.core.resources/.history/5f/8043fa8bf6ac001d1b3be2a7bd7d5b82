@@ -36,6 +36,7 @@ public class LogDeAcessoServices {
 	public LogDeAcessoDTO logs(int id) {
 		
 		LogDeAcesso log = new LogDeAcesso();
+		log.setHorario_de_acesso(instant);
 		
 		FrasesDTO frase = requisicao(id);
 		
