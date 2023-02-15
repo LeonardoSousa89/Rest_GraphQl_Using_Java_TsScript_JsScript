@@ -7,11 +7,5 @@
     },
     {
         "frase_do_usuario": "Ops somente Api no momento"
-    },
-    {
-        "frase_do_usuario": "Ops a primeira parte bateu certo muito desafiadora"
-    },
-    {
-        "frase_do_usuario": "Ops tão simples quanto fetch e axios"
     }
 ]
