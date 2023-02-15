@@ -1,5 +1,7 @@
 package com.rest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,5 +25,12 @@ public class LogDeAcessoController {
 		
 		 LogDeAcessoDTO log = services.logs(id);
 		 return ResponseEntity.status(HttpStatus.OK).body(log);
+	}
+	
+	@GetMapping()
+	public ResponseEntity<List<LogDeAcessoDTO>> obterLogs(){
+		
+		 List<LogDeAcessoDTO> registros = services.obterLogs();
+		 return ResponseEntity.status(HttpStatus.OK).body(registros);
 	}
 }

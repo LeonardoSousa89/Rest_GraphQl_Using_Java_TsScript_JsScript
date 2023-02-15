@@ -1,6 +1,7 @@
 package com.rest.services;
 
-import java.time.Instant;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,7 @@ public class LogDeAcessoServices {
 	@Autowired
 	LogDeAcessoRepository repository;
 	
-	Instant instant = Instant.now();
-	
 	private String nova_frase;
-	
 	
 	
 	public FrasesDTO requisicao(int id) {
@@ -58,5 +56,17 @@ public class LogDeAcessoServices {
 		fraseDeRegistro.setFrase_do_usuario(novaFrase.getFrase_do_usuario());
 		
 		repository.save(fraseDeRegistro);
+	}
+	
+	
+	public List<LogDeAcessoDTO> obterLogs(){
+			
+		List<LogDeAcesso> registros = repository.findAll();
+		
+		List<LogDeAcessoDTO> registrosDto = registros.stream()
+													  .map(log -> new LogDeAcessoDTO(log))
+													  .collect(Collectors.toList());
+		
+		return registrosDto;												  
 	}
 }
