@@ -12112,3 +12112,6 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-02-15 03:43:40.727
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.SjUZJxlD => OK
+
+!ENTRY org.eclipse.ui 2 2 2023-02-15 03:50:35.456
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
