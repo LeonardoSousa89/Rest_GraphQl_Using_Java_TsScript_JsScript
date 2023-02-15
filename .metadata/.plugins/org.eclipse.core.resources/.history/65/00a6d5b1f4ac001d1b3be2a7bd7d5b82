@@ -14,4 +14,5 @@ public interface FrasesFeignClient {
 
 	@GetMapping(value = "/{id}")
 	ResponseEntity<FrasesDTO> getFraseById(@PathVariable int id);
+	
 }

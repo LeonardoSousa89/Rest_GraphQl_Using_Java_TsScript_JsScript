@@ -24,8 +24,6 @@ public class LogDeAcessoServices {
 	
 	private String nova_frase;
 	
-	
-	
 	public FrasesDTO requisicao(int id) {
 		
 		FrasesDTO frase = frasesFeignClient.getFraseById(id).getBody();
@@ -60,4 +58,5 @@ public class LogDeAcessoServices {
 		
 		repository.save(fraseDeRegistro);
 	}
+	
 }
