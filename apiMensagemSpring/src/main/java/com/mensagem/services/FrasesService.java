@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.mensagem.DTO.FrasesDTO;
 import com.mensagem.entities.Frases;
 import com.mensagem.repositories.FrasesRepository;
+import com.mensagem.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class FrasesService {
@@ -21,24 +24,30 @@ public class FrasesService {
 		repository.save(frase);
 	}
 	
-	public List<FrasesDTO> getFrases(){
+	public List<FrasesDTO> getFrases(PageRequest paginacao){
 		
-		List <Frases> frases = repository.findAll();
+		Page<Frases> frases = repository.getFrases(paginacao);
 		
 		List<FrasesDTO> frasesDTO = frases.stream()
 										  .map(listaDeFrases -> new FrasesDTO(listaDeFrases))
-										  .collect(Collectors.toList());		
+										  .collect(Collectors.toList());	
 		
 		return frasesDTO;
 	}
 	
 	public FrasesDTO getFraseById(int id) {
 		
-		Frases frase = repository.findById(id).get();
-		
-		FrasesDTO fraseDTO = new FrasesDTO(frase);
-		
-		return 	fraseDTO;
+		try {
+			
+			Frases frase = repository.findById(id).get();
+			
+			FrasesDTO fraseDTO = new FrasesDTO(frase);
+			
+			return 	fraseDTO;
+		}catch (Exception e) {
+			
+			throw new ResourceNotFoundException("frase não encontrada");
+		}
 	}
 	
 	
@@ -49,13 +58,27 @@ public class FrasesService {
 	
 	public void updateFrase(int id, Frases resource) {
 		
-		Frases newResource = repository.getOne(id);
-		updateResource(newResource, resource);
-		repository.save(newResource);
+		try {
+			
+			Frases newResource = repository.getOne(id);
+			updateResource(newResource, resource);
+			repository.save(newResource);
+		}catch (Exception e) {
+			
+			throw new ResourceNotFoundException("frase não encontrada");
+		}
+		
 	}
 	
 	public void deleteFraseById(int id) {
 		
-		repository.deleteById(id);
+		try {
+			
+			repository.deleteById(id);
+		}catch (Exception e) {
+			
+			throw new ResourceNotFoundException("frase não encontrada");
+		}
+		
 	}
 }

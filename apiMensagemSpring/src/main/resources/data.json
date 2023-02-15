@@ -1,17 +1,20 @@
 [
-    {
-        "frase_do_usuario": "Ops somente Api com rest em spring usando feign client"
-    },
-    {
-        "frase_do_usuario": "Ops somente Api com rest em spring"
-    },
-    {
-        "frase_do_usuario": "Ops somente Api no momento"
-    },
-    {
-        "frase_do_usuario": "Ops a primeira parte bateu certo muito desafiadora"
-    },
-    {
-        "frase_do_usuario": "Ops tão simples quanto fetch e axios"
-    }
+    { "frase_do_usuario": "Ops somente Api com rest em spring usando feign client" },
+    
+    { "frase_do_usuario": "Ops somente Api com rest em spring"},
+    
+    { "frase_do_usuario": "Ops somente Api no momento"},
+    
+    { "frase_do_usuario": "Ops a primeira parte bateu certo muito desafiadora"},
+    
+    { "frase_do_usuario": "Ops tão simples quanto fetch e axios" },
+    
+    { "frase_do_usuario": "Ops tão simples utilizar os recursos" },
+    
+    { "frase_do_usuario": "Ops vou aprender mais mano hehe" },
+    
+    { "frase_do_usuario": "Ops tô chegando a pleno man" },
+    
+    { "frase_do_usuario": "Ops bateu certo" }
+    
 ]

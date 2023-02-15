@@ -5,6 +5,7 @@
 #https://www.devmedia.com.br/jpa-como-usar-a-anotacao-generatedvalue/38592
 #https://dicasdejava.com.br/como-configurar-o-lombok-no-eclipse/
 #https://mkyong.com/java/how-to-get-current-timestamps-in-java/
+#https://www.baeldung.com/spring-cors falta testar a configuração de CORS
 
 
 #A BUSCA AQUI É DIFERENTE DO MVN REPOSITORY É POR MEIO DE BUSCA, EX: machine learning, barcode, security, graphQl ...
