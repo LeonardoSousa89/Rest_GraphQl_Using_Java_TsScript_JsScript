@@ -21,6 +21,11 @@ import com.mensagem.DTO.FrasesDTO;
 import com.mensagem.entities.Frases;
 import com.mensagem.services.FrasesService;
 
+//apoio
+//https://spring.io/guides/gs/rest-service-cors/
+//https://stackoverflow.com/questions/56927217/how-to-enable-cors-in-spring-boot-not-working
+//https://www.baeldung.com/spring-cors
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/frase")

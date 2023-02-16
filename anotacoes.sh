@@ -1,3 +1,16 @@
+
+#AVISOS!!
+
+#continuar na próxima revisão de java-spring:
+
+#falta inserir try/catch na apiRest, tentar inserir 
+#cache em ambos os projetos,
+#tentar tratar erros com status 500
+#e configurar cors para ambos
+
+#apagar ao terminar o exercicio estes AVISOS!!
+
+
 #https://start.spring.io/
 #https://mvnrepository.com/
 #https://mvnrepository.com/search?q=spring+cloud
